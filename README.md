@@ -1,4 +1,4 @@
-# Command Menu for GNOME Top Bar
+### Command Menu for GNOME Top Bar
 
 GNOME shell extension to manage command shortcuts in the GNOME Top Bar.
 
