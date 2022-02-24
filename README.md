@@ -46,3 +46,11 @@ Inspired by Shuttle and SSHMenu.
     }
 ]
 ```
+
+---
+
+#### Generate Build Zip
+
+```
+zip gnome-command-menu.zip icon.svg metadata.json extension.js
+```
