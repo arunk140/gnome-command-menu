@@ -2,8 +2,9 @@
 
 GNOME shell extension to manage command shortcuts in the GNOME Top Bar.
 
-Inspired by Shuttle and SSHMenu
+Inspired by Shuttle and SSHMenu.
 
+![Command Menu Example Screenshot](Screenshot-Example.png "Command Menu Example Screenshot")
 
 ---
 
