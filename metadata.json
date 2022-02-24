@@ -1,6 +1,6 @@
 {
   "description": "A GNOME Shell Extension to manage shortcuts in Top Bar (Inspired by Shuttle and SSHMenu). Edit the .commands.json file to add your own shortcuts.",
-  "name": "GNOME Command Menu",
+  "name": "Command Menu",
   "shell-version": [
     "40",
     "41"
