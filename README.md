@@ -6,6 +6,8 @@ Inspired by Shuttle and SSHMenu.
 
 ![Command Menu Example Screenshot](Screenshot-Example.png "Command Menu Example Screenshot")
 
+For Icon Names - https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html
+
 ---
 
 #### Example ~/.commands.json
