@@ -23,6 +23,7 @@ function populateMenuItems(menu, cmds) {
     if (!cmd.title) { return; }
     if (cmd.type === 'submenu') {
       let submenu;
+      if (!cmd.submenu) { return; }
       submenu = new PopupMenu.PopupSubMenuMenuItem(cmd.title);
       populateMenuItems(submenu.menu, cmd.submenu);
       menu.addMenuItem(submenu);
@@ -55,6 +56,14 @@ class MyPopup extends PanelMenu.Button {
     });
     this.add_child(icon);
     populateMenuItems(this.menu, commands);
+    
+    let editBtn = new PopupMenu.PopupMenuItem('Edit Commands');
+    editBtn.connect('activate', () => {
+      // Edit ~/.commands.json
+      Gio.AppInfo.launch_default_for_uri('file://' + GLib.get_home_dir() + '/.commands.json', null).launch(null, null);
+    });
+    this.menu.addMenuItem(editBtn);
+
     let reloadBtn = new PopupMenu.PopupMenuItem('Reload');
     reloadBtn.connect('activate', () => {
       reloadExtension();
@@ -70,7 +79,7 @@ function enable() {
   var filePath = ".commands.json";
   var file = Gio.file_new_for_path(GLib.get_home_dir() + "/" + filePath);
   try {
-    var [ok, contents, etag] = file.load_contents(null);
+    var [ok, contents, _] = file.load_contents(null);
     if (ok) {
       commands = JSON.parse(contents);
     }
@@ -79,17 +88,13 @@ function enable() {
   }
   commands.push({
     type: 'separator'
-  })
-  commands.push({
-    title: 'Edit .commands.json',
-    command: "gnome-terminal -- bash -c 'nano " + GLib.get_home_dir() + "/" + filePath + "'",
   });
-  
   myPopup = new MyPopup();
   Main.panel.addToStatusArea('myPopup', myPopup, 1);
 }
 
-
 function disable() {
   myPopup.destroy();
+  myPopup = null;
+  commands = [];
 }
