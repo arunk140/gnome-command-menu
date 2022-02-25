@@ -54,5 +54,5 @@ For Icon Names - https://specifications.freedesktop.org/icon-naming-spec/latest/
 #### Generate Build Zip
 
 ```
-zip gnome-command-menu.zip icon.svg metadata.json extension.js
+zip gnome-command-menu.zip icon.svg metadata.json extension.js README.md LICENSE
 ```
