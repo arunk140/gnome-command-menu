@@ -60,3 +60,12 @@ For Icon Names - https://specifications.freedesktop.org/icon-naming-spec/latest/
 ```
 zip gnome-command-menu.zip icon.svg metadata.json extension.js README.md LICENSE
 ```
+
+#### Manual Install
+
+```
+git clone https://github.com/arunk140/gnome-command-menu.git
+cd gnome-command-menu
+gnome-extensions package 
+gnome-extensions install command-menu@arunk140.com.shell-extension.zip
+```
