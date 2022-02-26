@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="EGO-Icon.svg"
+   inkscape:export-filename="/home/arun/GitHub/gnome-command-menu/Assets/EGO-Icon.png"
+   inkscape:export-xdpi="48"
+   inkscape:export-ydpi="48"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:snap-grids="true"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-page="false"
+     inkscape:zoom="1.5395044"
+     inkscape:cx="128.28804"
+     inkscape:cy="256.57608"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5">
+    <sodipodi:guide
+       position="256,484.66044"
+       orientation="-1,0"
+       id="guide160"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="-79.89584,256"
+       orientation="0,1"
+       id="guide162"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="-122.03144,356"
+       orientation="0,1"
+       id="guide814"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="155.24476,156"
+       orientation="0,1"
+       id="guide816"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="BG"
+     style="display:inline"
+     sodipodi:insensitive="true" />
+  <g
+     inkscape:label="Rect"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#000000;fill-rule:evenodd;stroke-width:1.38398"
+       id="rect53"
+       width="455.58801"
+       height="445.19095"
+       x="28.205994"
+       y="-478.59546"
+       inkscape:transform-center-x="-22.955607"
+       inkscape:transform-center-y="-3.9587986"
+       transform="scale(1,-1)"
+       rx="128.31027" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Menu">
+    <rect
+       style="fill:#b3b3b3;stroke-width:1.36428"
+       id="rect656"
+       width="277.45804"
+       height="49.951"
+       x="117.27098"
+       y="306.04901"
+       rx="10" />
+    <rect
+       style="fill:#b3b3b3;stroke-width:1.36428"
+       id="rect656-0"
+       width="277.45804"
+       height="49.951"
+       x="117.27098"
+       y="156"
+       rx="10" />
+  </g>
+</svg>
