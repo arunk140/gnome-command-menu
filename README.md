@@ -1,5 +1,9 @@
 ### Command Menu for GNOME Top Bar
 
+[<img src="https://raw.githubusercontent.com/andyholmes/gnome-shell-extensions-badge/master/get-it-on-ego.svg?sanitize=true" alt="Get it on GNOME Extensions" height="100" align="middle">][ego] 
+
+[ego]: https://extensions.gnome.org/extension/4850/command-menu/
+
 GNOME shell extension to manage command shortcuts in the GNOME Top Bar.
 
 Inspired by Shuttle and SSHMenu.
