@@ -6,11 +6,11 @@ const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 
-let myPopup;
+let CommandMenuPopup;
 let commands = [];
 
 function reloadExtension() {
-  myPopup.destroy();
+  CommandMenuPopup.destroy();
   enable();
 }
 
@@ -46,8 +46,8 @@ function populateMenuItems(menu, cmds) {
   })
 }
 
-const MyPopup = GObject.registerClass(
-class MyPopup extends PanelMenu.Button {
+const CommandMenuPopup = GObject.registerClass(
+class CommandMenuPopup extends PanelMenu.Button {
   _init () {
     super._init(0);
     let icon = new St.Icon({
@@ -89,12 +89,12 @@ function enable() {
   commands.push({
     type: 'separator'
   });
-  myPopup = new MyPopup();
-  Main.panel.addToStatusArea('myPopup', myPopup, 1);
+  CommandMenuPopup = new CommandMenuPopup();
+  Main.panel.addToStatusArea('CommandMenuPopup', CommandMenuPopup, 1);
 }
 
 function disable() {
-  myPopup.destroy();
-  myPopup = null;
+  CommandMenuPopup.destroy();
+  CommandMenuPopup = null;
   commands = [];
 }
