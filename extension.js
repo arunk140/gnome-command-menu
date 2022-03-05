@@ -6,11 +6,11 @@ const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 
-let CommandMenuPopup;
+let commandMenuPopup;
 let commands = [];
 
 function reloadExtension() {
-  CommandMenuPopup.destroy();
+  commandMenuPopup.destroy();
   enable();
 }
 
@@ -89,12 +89,12 @@ function enable() {
   commands.push({
     type: 'separator'
   });
-  CommandMenuPopup = new CommandMenuPopup();
-  Main.panel.addToStatusArea('CommandMenuPopup', CommandMenuPopup, 1);
+  commandMenuPopup = new CommandMenuPopup();
+  Main.panel.addToStatusArea('commandMenuPopup', commandMenuPopup, 1);
 }
 
 function disable() {
-  CommandMenuPopup.destroy();
-  CommandMenuPopup = null;
+  commandMenuPopup.destroy();
+  commandMenuPopup = null;
   commands = [];
 }
