@@ -1,13 +1,14 @@
 const Main = imports.ui.main;
 const {St, GLib} = imports.gi;
 const GObject = imports.gi.GObject;
+const Clutter = imports.gi.Clutter;
 const Gio = imports.gi.Gio;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 
 let commandMenuPopup;
-let commands = [];
+let commands = {};
 
 function reloadExtension() {
   commandMenuPopup.destroy();
@@ -50,12 +51,25 @@ const CommandMenuPopup = GObject.registerClass(
 class CommandMenuPopup extends PanelMenu.Button {
   _init () {
     super._init(0);
-    let icon = new St.Icon({
+    let box = new St.BoxLayout();
+
+    var menuIcon = commands.icon && commands.icon.length > 0 ? {
+      icon_name: commands.icon,
+      style_class: 'system-status-icon' 
+    } : {
       gicon : Gio.icon_new_for_string( Me.dir.get_path() + '/icon.svg' ),
       style_class : 'system-status-icon',
+    };
+    let icon = new St.Icon(menuIcon);
+    box.add(icon);
+    let toplabel = new St.Label({
+      text: commands.text && commands.text.length > 0 ? commands.text : "",
+      y_expand: true,
+      y_align: Clutter.ActorAlign.CENTER
     });
-    this.add_child(icon);
-    populateMenuItems(this.menu, commands);
+    box.add(toplabel);
+    this.add_child(box);
+    populateMenuItems(this.menu, commands.menu);
     
     let editBtn = new PopupMenu.PopupMenuItem('Edit Commands');
     editBtn.connect('activate', () => {
@@ -86,12 +100,19 @@ function enable() {
   try {
     var [ok, contents, _] = file.load_contents(null);
     if (ok) {
-      commands = JSON.parse(contents);
+      var jsonContent = JSON.parse(contents);
+      if (jsonContent instanceof Array) {
+        commands['menu'] = jsonContent;
+      } else if (jsonContent instanceof Object && jsonContent.menu instanceof Array) {
+        commands = jsonContent;
+      }
     }
   } catch (e) {
-    commands = [];
+    commands = {
+      menu: []
+    };
   }
-  commands.push({
+  commands.menu.push({
     type: 'separator'
   });
   commandMenuPopup = new CommandMenuPopup();
@@ -101,5 +122,5 @@ function enable() {
 function disable() {
   commandMenuPopup.destroy();
   commandMenuPopup = null;
-  commands = [];
+  commands = {};
 }
