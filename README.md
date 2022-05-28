@@ -55,6 +55,12 @@ For Icon Names - https://specifications.freedesktop.org/icon-naming-spec/latest/
 
 ---
 
+#### New Feature (Work in Progress) - Web Editor for .commands.json 
+
+https://github.com/arunk140/gnome-command-menu-editor
+
+---
+
 #### Generate Build Zip
 
 ```
