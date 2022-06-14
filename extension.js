@@ -15,18 +15,18 @@ function reloadExtension() {
   enable();
 }
 
-function populateMenuItems(menu, cmds) {
+function populateMenuItems(menu, cmds, level) {
   cmds.forEach((cmd) => {
     if (cmd.type === 'separator') {
       menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
       return;
     }
     if (!cmd.title) { return; }
-    if (cmd.type === 'submenu') {
+    if (cmd.type === 'submenu' && level === 0) { // Stop submenu from being added after the first level
       let submenu;
       if (!cmd.submenu) { return; }
       submenu = new PopupMenu.PopupSubMenuMenuItem(cmd.title);
-      populateMenuItems(submenu.menu, cmd.submenu);
+      populateMenuItems(submenu.menu, cmd.submenu, level + 1);
       menu.addMenuItem(submenu);
       return;
     }
@@ -51,25 +51,29 @@ const CommandMenuPopup = GObject.registerClass(
 class CommandMenuPopup extends PanelMenu.Button {
   _init () {
     super._init(0);
+    let menuTitle = commands.title && commands.title.length > 0 ? commands.title : "";
     let box = new St.BoxLayout();
+    if (commands.showIcon !== false || (menuTitle === "")) {
+      var menuIcon = commands.icon && commands.icon.length > 0 ? {
+        icon_name: commands.icon,
+        style_class: 'system-status-icon' 
+      } : {
+        gicon : Gio.icon_new_for_string( Me.dir.get_path() + '/icon.svg' ),
+        style_class : 'system-status-icon',
+      };
+      let icon = new St.Icon(menuIcon);
+      box.add(icon);
+    }
 
-    var menuIcon = commands.icon && commands.icon.length > 0 ? {
-      icon_name: commands.icon,
-      style_class: 'system-status-icon' 
-    } : {
-      gicon : Gio.icon_new_for_string( Me.dir.get_path() + '/icon.svg' ),
-      style_class : 'system-status-icon',
-    };
-    let icon = new St.Icon(menuIcon);
-    box.add(icon);
     let toplabel = new St.Label({
-      text: commands.text && commands.text.length > 0 ? commands.text : "",
+      text: menuTitle,
       y_expand: true,
       y_align: Clutter.ActorAlign.CENTER
     });
     box.add(toplabel);
     this.add_child(box);
-    populateMenuItems(this.menu, commands.menu);
+    let level = 0;
+    populateMenuItems(this.menu, commands.menu, level);
     
     let editBtn = new PopupMenu.PopupMenuItem('Edit Commands');
     editBtn.connect('activate', () => {
