@@ -53,6 +53,11 @@ For Icon Names - https://specifications.freedesktop.org/icon-naming-spec/latest/
 ]
 ```
 
+```
+Note:
+examples/.commands-full.json is supported in versions >= 5
+```
+
 ---
 
 #### New Feature (Work in Progress) - Web Editor for .commands.json 
