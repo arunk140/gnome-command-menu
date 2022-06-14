@@ -14,7 +14,7 @@ For Icon Names - https://specifications.freedesktop.org/icon-naming-spec/latest/
 
 ---
 
-#### Example ~/.commands.json
+#### Example ~/.commands.json (Check the examples folder for more..)
 
 ```
 [
