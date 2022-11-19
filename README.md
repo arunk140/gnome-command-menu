@@ -78,6 +78,6 @@ zip gnome-command-menu.zip icon.svg metadata.json extension.js prefs.js schemas/
 git clone https://github.com/arunk140/gnome-command-menu.git
 cd gnome-command-menu
 glib-compile-schemas schemas
-gnome-extensions package 
+gnome-extensions pack
 gnome-extensions install command-menu@arunk140.com.shell-extension.zip
 ```
