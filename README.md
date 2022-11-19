@@ -69,7 +69,7 @@ https://github.com/arunk140/gnome-command-menu-editor
 #### Generate Build Zip
 
 ```
-zip gnome-command-menu.zip icon.svg metadata.json extension.js README.md LICENSE
+zip gnome-command-menu.zip icon.svg metadata.json extension.js prefs.js schemas/org.gnome.shell.extensions.commandmenu.gschema.xml README.md LICENSE
 ```
 
 #### Manual Install
@@ -77,6 +77,7 @@ zip gnome-command-menu.zip icon.svg metadata.json extension.js README.md LICENSE
 ```
 git clone https://github.com/arunk140/gnome-command-menu.git
 cd gnome-command-menu
+glib-compile-schemas schemas
 gnome-extensions package 
 gnome-extensions install command-menu@arunk140.com.shell-extension.zip
 ```

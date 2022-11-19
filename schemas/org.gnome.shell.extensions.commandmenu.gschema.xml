@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+	<schema id="org.gnome.shell.extensions.commandmenu" path="/org/gnome/shell/extensions/commandmenu/">
+		<key name="edit-button-visible" type="b">
+			<default>true</default>
+			<summary>Show Edit Button</summary>
+			<description>Show Edit Button in Menu</description>
+		</key>
+		<key name="reload-button-visible" type="b">
+			<default>true</default>
+			<summary>Show Reload Button</summary>
+			<description>Show Reload Button in Menu</description>
+		</key>
+		<key name="restart-counter" type="i">
+			<default>0</default>
+			<summary>Restart Counter</summary>
+			<description>Restart Counter</description>
+		</key>
+		<key name="edit-counter" type="i">
+			<default>0</default>
+			<summary>Edit Counter</summary>
+			<description>Edit Counter</description>
+		</key>
+	</schema>
+</schemalist>
