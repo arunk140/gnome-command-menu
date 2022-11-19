@@ -50,7 +50,7 @@ function populateMenuItems(menu, cmds, level) {
 const CommandMenuPopup = GObject.registerClass(
 class CommandMenuPopup extends PanelMenu.Button {
   _init () {
-    super._init(0);
+    super._init(0.5);
     let menuTitle = commands.title && commands.title.length > 0 ? commands.title : "";
     let box = new St.BoxLayout();
     if (commands.showIcon !== false || (menuTitle === "")) {
